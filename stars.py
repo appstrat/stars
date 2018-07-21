@@ -23,10 +23,10 @@ v1_dir = math.pi / 4
 v2_mag = 75
 v2_dir = math.pi / 4
 # Initial body accelerations
-a1_mag = 25
-a1_dir = math.pi * 2/3
-a2_mag = 10
-a2_dir = math.pi * 5/3
+a1_mag = 0
+a1_dir = 0
+a2_mag = 0
+a2_dir = 0
 # Body colours
 outline1  = "#0066ff"
 interior1 = "#00ff99"
