@@ -22,11 +22,6 @@ v1_mag = 50
 v1_dir = math.pi / 4
 v2_mag = 75
 v2_dir = math.pi / 4
-# Initial body accelerations
-a1_mag = 0
-a1_dir = 0
-a2_mag = 0
-a2_dir = 0
 # Body colours
 outline1  = "#0066ff"
 interior1 = "#00ff99"
@@ -61,6 +56,12 @@ cir2 = Circle(Point(x2, y2), 10)
 cir2.setOutline(outline2)
 cir2.setFill(interior2)
 cir2.draw(win)
+
+# Initial body accelerations
+a1_mag = 0
+a1_dir = 0
+a2_mag = 0
+a2_dir = 0
 
 # Resolve vectors into x and y
 v1x = v1_mag * math.sin(v1_dir)
