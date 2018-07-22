@@ -74,6 +74,9 @@ a1y = a1_mag * math.cos(a1_dir)
 a2x = a2_mag * math.sin(a2_dir)
 a2y = a2_mag * math.cos(a2_dir)
 
+# Newton's Gravitational Constant
+G = 6.7 * 10 ** -11
+
 
 # Main control loop
 
