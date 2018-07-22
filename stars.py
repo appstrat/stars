@@ -91,6 +91,9 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	start_time = time.time()
 	interval = start_time - old_start_time
 
+	# Calculate distance between bodies
+	r = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+
 	# Calculate how far to move the bodies
 	# -1 in the y calculations is to account for origin starting top left, not bottom left
 	x1_diff = (v1x * interval) + (1/2 * a1x * interval ** 2)
