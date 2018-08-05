@@ -83,11 +83,11 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	# Calculate distance between bodies
 	r = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-	# Calculate the angle between bodies
-	angle = math.atan((x2 - x1) / (y2 - y1))
+	# Calculate the angle between bodies (which is the direction of the force vector)
+	F_dir = math.atan((x2 - x1) / (y2 - y1))
 
 	# Calculate the magnitude of the gravitational force between bodies
-	F = G * m1 * m2 / r ** 2
+	F_mag = G * m1 * m2 / r ** 2
 	
 	# Calculate accelerations
 	a1x = 0
