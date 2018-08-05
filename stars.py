@@ -83,6 +83,12 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	# Calculate distance between bodies
 	r = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
+	# Calculate accelerations
+	a1x = 0
+	a1y = 0
+	a2x = 0
+	a2y = 0
+
 	# Calculate how far to move the bodies
 	# -1 in the y calculations is to account for origin starting top left, not bottom left
 	x1_diff = (v1x * interval) + (1/2 * a1x * interval ** 2)
