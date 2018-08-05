@@ -14,17 +14,19 @@ width = 1000
 height = 800
 # Initial position of centre of body
 x1 = 0
-y1 = 500
-x2 = 200
-y2 = 700
+y1 = 500000000
+x2 = 200000000
+y2 = 700000000
 # Initial body velocities
-v1_mag = 50
+v1_mag = 50000000
 v1_dir = 3 * math.pi / 4
-v2_mag = 75
+v2_mag = 75000000
 v2_dir = 3 * math.pi / 4
 # Body masses
 m1 = 2 * 10 ** 30
 m2 = 3 * 10 ** 30
+# Scaling
+s_scale = 1000000
 # Body colours
 outline1  = "#0066ff"
 interior1 = "#00ff99"
@@ -51,11 +53,11 @@ for i in range(0, 100):
 		colour = "#7777ff"
 	win.plot(random.randint(0, width), random.randint(0, height), colour)
 
-cir1 = Circle(Point(x1, y1), 10)
+cir1 = Circle(Point(x1 / s_scale, y1 / s_scale), 10)
 cir1.setOutline(outline1)
 cir1.setFill(interior1)
 cir1.draw(win)
-cir2 = Circle(Point(x2, y2), 10)
+cir2 = Circle(Point(x2 / s_scale, y2 / s_scale), 10)
 cir2.setOutline(outline2)
 cir2.setFill(interior2)
 cir2.draw(win)
@@ -74,7 +76,7 @@ G = 6.7 * 10 ** -11
 
 clicked = None
 start_time = time.time()
-while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >= 0 and y2 < height and y2 >= 0:
+while x1 < width * s_scale and x1 >= 0 and y1 < height * s_scale and y1 >= 0 and x2 < width * s_scale and x2 >= 0 and y2 < height * s_scale and y2 >= 0:
 	# Calculate interval since last iteration
 	old_start_time = start_time
 	start_time = time.time()
@@ -106,17 +108,15 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	x2_diff = (v2x * interval) + (1/2 * a2x * interval ** 2)
 	y2_diff = (v2y * interval) + (1/2 * a2y * interval ** 2)
 
-	# Move the bodies
-	cir1.move(x1_diff, y1_diff)
-	cir2.move(x2_diff, y2_diff)
+	# Move the bodies on screen
+	cir1.move(x1_diff / s_scale, y1_diff / s_scale)
+	cir2.move(x2_diff / s_scale, y2_diff / s_scale)
 
-	# Get the new x and y coordinates
-	centre = cir1.getCenter()
-	x1 = centre.getX()
-	y1 = centre.getY()
-	centre = cir2.getCenter()
-	x2 = centre.getX()
-	y2 = centre.getY()
+	# Calculate the new x and y coordinates
+	x1 = x1 + x1_diff
+	y1 = y1 + y1_diff
+	x2 = x2 + x2_diff
+	y2 = y2 + y2_diff
 
 	# Update the velocities
 	v1x = v1x + a1x * interval
