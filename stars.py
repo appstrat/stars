@@ -38,7 +38,7 @@ bg = "#000000"
 
 # Create the main objects
 
-win = GraphWin("Katie's Stuff", width, height)
+win = GraphWin("Star Simulation", width, height)
 win.setBackground(bg)
 # Create background stars
 for i in range(0, 100):	
