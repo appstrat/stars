@@ -88,6 +88,10 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 
 	# Calculate the magnitude of the gravitational force between bodies
 	F_mag = G * m1 * m2 / r ** 2
+
+	# Resolve the gravitational force into x and y components
+	Fx = F_mag * math.sin(F_dir)
+	Fy = F_mag * math.cos(F_dir)
 	
 	# Calculate accelerations
 	a1x = 0
