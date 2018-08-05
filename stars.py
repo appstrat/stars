@@ -83,6 +83,9 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	# Calculate distance between bodies
 	r = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
+	# Calculate gravitational force between bodies
+	F = G * m1 * m2 / r ** 2
+	
 	# Calculate accelerations
 	a1x = 0
 	a1y = 0
