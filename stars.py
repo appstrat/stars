@@ -94,10 +94,10 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	Fy = F_mag * math.cos(F_dir)
 	
 	# Calculate accelerations
-	a1x = 0
-	a1y = 0
-	a2x = 0
-	a2y = 0
+	a1x = Fx / m1
+	a1y = Fy / m1
+	a2x = Fx / m2 * -1
+	a2y = Fy / m2 * -1
 
 	# Calculate how far to move the bodies
 	# -1 in the y calculations is to account for origin starting top left, not bottom left
