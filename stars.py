@@ -85,7 +85,6 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 
 	# Calculate the angle between bodies
 	angle = math.atan((x2 - x1) / (y2 - y1))
-	print(angle)
 
 	# Calculate the magnitude of the gravitational force between bodies
 	F = G * m1 * m2 / r ** 2
@@ -99,9 +98,9 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	# Calculate how far to move the bodies
 	# -1 in the y calculations is to account for origin starting top left, not bottom left
 	x1_diff = (v1x * interval) + (1/2 * a1x * interval ** 2)
-	y1_diff = ((v1y * interval) + (1/2 * a1y * interval ** 2)) * -1
+	y1_diff = (v1y * interval) + (1/2 * a1y * interval ** 2)
 	x2_diff = (v2x * interval) + (1/2 * a2x * interval ** 2)
-	y2_diff = ((v2y * interval) + (1/2 * a2y * interval ** 2)) * -1
+	y2_diff = (v2y * interval) + (1/2 * a2y * interval ** 2)
 
 	# Move the bodies
 	cir1.move(x1_diff, y1_diff)
@@ -125,4 +124,3 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 # pause for click in window before exiting
 win.getMouse()
 win.close()
-
