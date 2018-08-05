@@ -14,9 +14,9 @@ width = 1000
 height = 800
 # Initial position of centre of body
 x1 = 0
-y1 = 500000000
-x2 = 200000000
-y2 = 700000000
+y1 = 100000000
+x2 = 900000000
+y2 = 500000000
 # Initial body velocities
 v1_mag = 50
 v1_dir = 3 * math.pi / 4
