@@ -19,9 +19,9 @@ x2 = 200
 y2 = 700
 # Initial body velocities
 v1_mag = 50
-v1_dir = math.pi / 4
+v1_dir = 3 * math.pi / 4
 v2_mag = 75
-v2_dir = math.pi / 4
+v2_dir = 3 * math.pi / 4
 # Body masses
 m1 = 2 * 10 ** 30
 m2 = 3 * 10 ** 30
