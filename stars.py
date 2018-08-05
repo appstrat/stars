@@ -18,15 +18,16 @@ y1 = 500000000
 x2 = 200000000
 y2 = 700000000
 # Initial body velocities
-v1_mag = 50000000
+v1_mag = 50
 v1_dir = 3 * math.pi / 4
-v2_mag = 75000000
+v2_mag = 75
 v2_dir = 3 * math.pi / 4
 # Body masses
 m1 = 2 * 10 ** 30
 m2 = 3 * 10 ** 30
 # Scaling
 s_scale = 1000000
+t_scale = 1 * 60   # 1 second = 1 min
 # Body colours
 outline1  = "#0066ff"
 interior1 = "#00ff99"
@@ -77,10 +78,11 @@ G = 6.7 * 10 ** -11
 clicked = None
 start_time = time.time()
 while x1 < width * s_scale and x1 >= 0 and y1 < height * s_scale and y1 >= 0 and x2 < width * s_scale and x2 >= 0 and y2 < height * s_scale and y2 >= 0:
+	print(x1, y1, x2, y2)
 	# Calculate interval since last iteration
 	old_start_time = start_time
 	start_time = time.time()
-	interval = start_time - old_start_time
+	interval = (start_time - old_start_time) * t_scale
 
 	# Calculate distance between bodies
 	r = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
@@ -117,6 +119,7 @@ while x1 < width * s_scale and x1 >= 0 and y1 < height * s_scale and y1 >= 0 and
 	y1 = y1 + y1_diff
 	x2 = x2 + x2_diff
 	y2 = y2 + y2_diff
+	print(x1, y1, x2, y2)
 
 	# Update the velocities
 	v1x = v1x + a1x * interval
