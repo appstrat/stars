@@ -60,7 +60,7 @@ cir2.setOutline(outline2)
 cir2.setFill(interior2)
 cir2.draw(win)
 
-# Resolve vectors into x and y
+# Resolve vectors into x and y components
 v1x = v1_mag * math.sin(v1_dir)
 v1y = v1_mag * math.cos(v1_dir)
 v2x = v2_mag * math.sin(v2_dir)
@@ -83,7 +83,7 @@ while x1 < width and x1 >= 0 and y1 < height and y1 >= 0 and x2 < width and x2 >
 	# Calculate distance between bodies
 	r = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-	# Calculate gravitational force between bodies
+	# Calculate the magnitude of the gravitational force between bodies
 	F = G * m1 * m2 / r ** 2
 	
 	# Calculate accelerations
