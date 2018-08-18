@@ -26,7 +26,7 @@ v2_dir = 3 * math.pi / 4
 m1 = 2 * 10 ** 30
 m2 = 3 * 10 ** 30
 # Scaling
-s_scale = 10000000000
+s_scale = 10000000000              # 1 pixel  = 10000000000m
 t_scale = 1 * 60 * 60 * 24 * 365   # 1 second = 1 year
 # Body colours
 outline1  = "#0066ff"
