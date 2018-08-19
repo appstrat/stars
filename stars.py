@@ -13,9 +13,9 @@ from graphics import *
 width = 1000
 height = 800
 # Initial position of centre of body
-x1 = 0
-y1 = 1000000000000
-x2 = 9000000000000
+x1 = 9000000000000
+y1 = 6000000000000
+x2 = 3000000000000
 y2 = 5000000000000
 # Initial body velocities
 v1_mag = 50
@@ -78,7 +78,6 @@ G = 6.7 * 10 ** -11
 clicked = None
 start_time = time.time()
 while x1 < width * s_scale and x1 >= 0 and y1 < height * s_scale and y1 >= 0 and x2 < width * s_scale and x2 >= 0 and y2 < height * s_scale and y2 >= 0:
-	print(x1, y1, x2, y2)
 	# Calculate interval since last iteration
 	old_start_time = start_time
 	start_time = time.time()
@@ -89,6 +88,12 @@ while x1 < width * s_scale and x1 >= 0 and y1 < height * s_scale and y1 >= 0 and
 
 	# Calculate the angle between bodies (which is the direction of the force vector)
 	F_dir = math.atan((x2 - x1) / (y2 - y1))
+
+	# Convert the angle of the force into a bearing
+	if (x1 < x2 and y1 > y2) or (x1 > x2 and y1 > y2):
+		F_dir += math.pi
+	elif x1 > x2 and y1 < y2:
+		F_dir += 2 * math.pi
 
 	# Calculate the magnitude of the gravitational force between bodies
 	F_mag = G * m1 * m2 / r ** 2
@@ -119,7 +124,6 @@ while x1 < width * s_scale and x1 >= 0 and y1 < height * s_scale and y1 >= 0 and
 	y1 = y1 + y1_diff
 	x2 = x2 + x2_diff
 	y2 = y2 + y2_diff
-	print(x1, y1, x2, y2)
 
 	# Update the velocities
 	v1x = v1x + a1x * interval
